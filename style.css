@@ -1,15 +1,16 @@
 body {
     margin: 0;
     padding: 5px;
-    color: #fff !important;
+    /* color: #fff !important; */
     /* background-image: rgb(2,0,36) !important; */
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(1,85,124,1) 100%);
-
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(1, 85, 124, 1) 100%);
+    background-size: cover  ;
 }
+
 /* .row{
     visibility: hidden;
 } */
-.col-md-6    {
+.col-md-6 {
     flex-flow: column wrap;
     padding: 20px;
 
@@ -73,7 +74,7 @@ div h1 {
     border: none;
     outline: none;
     color: #000;
-    background:none;
+    background: none;
 
 }
 
@@ -91,11 +92,13 @@ div h1 {
 .formControl button:hover {
     cursor: pointer;
 }
-.formControl input:active{
+
+.formControl input:active {
     background-color: none;
 }
+
 .formControl input:focus,
 .formControl button:focus {
     outline: none;
-    background:none;
+    background: none;
 }

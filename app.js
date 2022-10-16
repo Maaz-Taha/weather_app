@@ -10,7 +10,7 @@
 
 
 let getWeather = () => {
-    
+
     let cityName = document.querySelector("#cityName").value;
 
 
@@ -18,14 +18,17 @@ let getWeather = () => {
         .then(function (response) {
             // handle success
             console.log(response.data);
-        document.querySelector("#city").innerHTML=`${response.data.name}, ${response.data.sys.country}`
-            document.querySelector("#temp").innerHTML=`${response.data.main.temp}°C`
+            document.querySelector("#dt").innerHTML =   `${new Date()}`
+            document.querySelector("#city").innerHTML = `${response.data.name}, ${response.data.sys.country}`
+            document.querySelector("#temp").innerHTML = `${response.data.main.temp}°C`
             document.querySelector("#mm").innerHTML = `min ${response.data.main.temp_min}°C | max ${response.data.main.temp_max}°C`
-            document.querySelector("#feelsLike").innerHTML= `${response.data.main.feels_like}°C`
-            document.querySelector("#humidity").innerHTML= `${response.data.main.humidity}`
-            document.querySelector("#pressure").innerHTML= `${response.data.main.pressure}`
-            document.querySelector("#weather").innerHTML= `${response.data.weather.description}`
-
+            document.querySelector("#feelsLike").innerHTML = `${response.data.main.feels_like}°C`
+            document.querySelector("#humidity").innerHTML = `${response.data.main.humidity}`
+            document.querySelector("#pressure").innerHTML = `${response.data.main.pressure}`
+            document.querySelector("#weather").innerHTML = `${response.data.weather[0].description}`
+            document.querySelector("#icon").src = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            // document.querySelector("#icon").src = "http://openweathermap.org/img/wn/10d@2x.png"
+            // document.querySelector("#icon").innerHTML = ${response.data.weather[0].icon}
 
         })
         .catch(function (error) {
@@ -35,7 +38,3 @@ let getWeather = () => {
 }
 
 
-
-addEventListener('submit',function(e){
-    document.querySelector(".row").stlye.visiblity = "visible" 
-})
